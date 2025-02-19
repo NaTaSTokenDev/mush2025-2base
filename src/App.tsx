@@ -247,13 +247,13 @@ const App: React.FC = () => {
                       maxQuantity={10}
                     />
                     <ProductCard
-                      title="Lion's Mane Mushrooms"
-                      price={15.99}
-                      imagePlaceholder="https://i.ibb.co/HDfCcP96/blueoyster.jpg"
-                      description="Fresh, locally grown Lion's Mane mushrooms"
-                      sku="lions-mane-fresh"
-                      weight={454}
-                      maxQuantity={10}
+                      title="Coir Block"
+                      price={4.99}
+                      imagePlaceholder="https://i.ibb.co/sp6gtTHx/coco-coir-block-500x500.webp"
+                      description="Coir Block"
+                      sku="coir"
+                      weight={1340}
+                      maxQuantity={8}
                     />
                   </div>
                 </div>
@@ -283,15 +283,7 @@ const App: React.FC = () => {
                 <div className="space-y-8">
                   <h3 className="text-xl font-semibold text-amber-800">Equipment</h3>
                   <div className="grid gap-6">
-                    <ProductCard
-                      title="Flow Hood"
-                      price={599.99}
-                      imagePlaceholder="https://i.ibb.co/HDfCcP96/blueoyster.jpg"
-                      description="Professional laminar flow hood"
-                      sku="flow-hood-pro"
-                      weight={11340}
-                      maxQuantity={2}
-                    />
+
                     <ProductCard
                       title="Pressure Cooker"
                       price={299.99}
