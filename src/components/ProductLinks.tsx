@@ -17,7 +17,7 @@ const productLinks: ProductLink[] = [
     category: "Best Sellers",
     title: "Premium Pressure Cooker 23QT",
     description: "Perfect for sterilizing substrate and grain spawn. A must-have for serious cultivators.",
-    imageUrl: "https://i.ibb.co/6Hw8Q2H/pressure-cooker.jpg",
+    imageUrl: "https://i.ibb.co/VcjPKVCX/cooker1.jpg",
     affiliateUrl: "#",
     price: "$299.99",
     rating: 4.8,
@@ -40,16 +40,16 @@ const productLinks: ProductLink[] = [
     affiliateUrl: "#",
     price: "$79.99",
     rating: 4.9,
-    badge: "Best for Beginners"
+    badge: "Substrate Prep"
   },
   {
     category: "Books",
-    title: "Growing Gourmet and Medicinal Mushrooms",
-    description: "The comprehensive guide by Paul Stamets.",
-    imageUrl: "https://i.ibb.co/6Hw8Q2H/book.jpg",
+    title: "Beginner's Guide to Safely Foraging for Wild Mushrooms",
+    description: "Beginner's Guide to Safely Foraging for Wild Mushrooms: Identifying and Collecting Mushrooms Sustainably with Confidence ",
+    imageUrl: "https://i.ibb.co/DgStDqMT/book1.jpg",
     affiliateUrl: "#",
-    price: "$45.99",
-    rating: 4.9,
+    price: "$8.64",
+    rating: 4.7,
     badge: "Essential Reading"
   }
 ];
