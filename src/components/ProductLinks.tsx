@@ -33,7 +33,7 @@ const productLinks: ProductLink[] = [
     rating: 4.5
   },
   {
-    category: "Beginner Friendly",
+    category: "Substrate Preperation",
     title: "Complete Grow Kit",
     description: "Everything you need to start growing gourmet mushrooms at home.",
     imageUrl: "https://i.ibb.co/6Hw8Q2H/grow-kit.jpg",
@@ -57,7 +57,7 @@ const productLinks: ProductLink[] = [
 const categories = [
   { name: "Best Sellers", icon: Star },
   { name: "Essential Tools", icon: ThumbsUp },
-  { name: "Beginner Friendly", icon: Gift },
+  { name: "Substrate Preperation", icon: Gift },
   { name: "Books", icon: Award }
 ];
 
