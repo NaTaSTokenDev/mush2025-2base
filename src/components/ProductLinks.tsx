@@ -25,11 +25,11 @@ const productLinks: ProductLink[] = [
   },
   {
     category: "Essential Tools",
-    title: "Digital pH Meter",
-    description: "Accurate pH measurements for perfect substrate preparation.",
-    imageUrl: "https://i.ibb.co/6Hw8Q2H/ph-meter.jpg",
+    title: "Govee WiFi Hygrometer Thermometer",
+    description: "Govee WiFi Hygrometer Thermometer Sensor 3 Pack, Indoor Wireless Smart Temperature Humidity Monitor with Remote App Notification Alert, 2 Years Data Storage Export, for Home, Greenhouse",
+    imageUrl: "https://i.ibb.co/hJkWN40N/sensor.jpg",
     affiliateUrl: "#",
-    price: "$49.99",
+    price: "$59.99",
     rating: 4.5
   },
   {
