@@ -75,19 +75,12 @@ const App: React.FC = () => {
           <>
             {/* Hero Section */}
             <section className="relative h-[600px] overflow-hidden">
-              <video
-                autoPlay
-                loop
-                muted
-                playsInline
+              <img
+                src={yourImage}
+                alt="Mushroom Service Logo"
                 className="absolute inset-0 w-full h-full object-cover"
                 style={{ filter: 'brightness(0.6)' }}
-              >
-                <source
-                  src="https://cdn.coverr.co/videos/coverr-growing-mushrooms-2527/1080p.mp4"
-                  type="video/mp4"
-                />
-              </video>
+              />
               <div className="absolute inset-0 bg-black/40" />
               <div className="relative max-w-7xl mx-auto px-4 h-full flex flex-col items-center justify-center text-center pt-20">
                 <div className="flex items-center gap-8 mb-8">
@@ -283,7 +276,6 @@ const App: React.FC = () => {
                 <div className="space-y-8">
                   <h3 className="text-xl font-semibold text-amber-800">Equipment</h3>
                   <div className="grid gap-6">
-
                     <ProductCard
                       title="Pressure Cooker"
                       price={299.99}
