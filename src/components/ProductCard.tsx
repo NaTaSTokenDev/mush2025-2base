@@ -28,7 +28,7 @@ export function ProductCard({
 }: ProductCardProps) {
   return (
     <div className="bg-white rounded-lg shadow-md overflow-hidden">
-      <div className="h-48 bg-gray-200 flex items-center justify-center">
+      <div className="aspect-square bg-gray-200">
         <img 
           src={imagePlaceholder} 
           alt={title} 

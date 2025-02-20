@@ -5,7 +5,7 @@ import { RecipeCard } from './components/RecipeCard';
 import { RecipeForm } from './components/RecipeForm';
 import { RecipeDetail } from './components/RecipeDetail';
 import { AdminPanel } from './components/AdminPanel';
-import { Plus, Search, Shield, Menu, X, MapPin, Phone, Mail, Sprout, Book, ShoppingBag, ChefHat, FileText, DollarSign, Calculator, BookOpen } from 'lucide-react';
+import { Plus, Search, Shield } from 'lucide-react';
 import { Navbar } from './components/Navbar';
 import { Footer } from './components/Footer';
 import { ProductCard } from './components/ProductCard';
@@ -13,38 +13,32 @@ import { LinksPage } from './components/LinksPage';
 import { BlogList } from './components/BlogList';
 import { BlogForm } from './components/BlogForm';
 import { BlogPost as BlogPostComponent } from './components/BlogPost';
-import { CommentList } from './components/CommentList';
-import { CommentForm } from './components/CommentForm';
 import { auth } from './lib/firebase';
-import yourImage from './images/mushroomservicelogo.png';
-import kingOyster from './images/kingoyster_1.jpeg';
 import { EbooksSection } from './components/EbooksSection';
 import { ColonizationEstimator } from './components/ColonizationEstimator';
 import { MarketPrices } from './components/MarketPrices';
+import { ProductLinks } from './components/ProductLinks';
 
 const App: React.FC = () => {
-  const [recipes, setRecipes] = useState<Recipe[]>(defaultRecipes);
-  const [selectedRecipe, setSelectedRecipe] = useState<Recipe | null>(null);
-  const [showForm, setShowForm] = useState(false);
-  const [searchTerm, setSearchTerm] = useState('');
-  const [selectedCategory, setSelectedCategory] = useState<Recipe['category'] | 'all'>('all');
-  const [adminState, setAdminState] = useState<AdminState>({
-    isAdmin: false,
-    password: ''
-  });
-  const [showAdminPanel, setShowAdminPanel] = useState(false);
   const [activeSection, setActiveSection] = useState('home');
   const [mobileMenuOpen, setMobileMenuOpen] = useState(false);
+  const [showForm, setShowForm] = useState(false);
+  const [selectedRecipe, setSelectedRecipe] = useState<Recipe | null>(null);
+  const [recipes, setRecipes] = useState<Recipe[]>(defaultRecipes);
+  const [searchTerm, setSearchTerm] = useState('');
+  const [selectedCategory, setSelectedCategory] = useState<Recipe['category'] | 'all'>('all');
+  const [showAdminPanel, setShowAdminPanel] = useState(false);
   const [showBlogForm, setShowBlogForm] = useState(false);
-  const [selectedPost, setSelectedPost] = useState<BlogPost | null>(null);
+
+  const user = auth.currentUser;
+  const isAdmin = user?.email === 'admin@mushroomservice.com';
 
   const pendingRecipes = recipes.filter(recipe => recipe.status === 'pending');
-  const isAdmin = auth.currentUser?.email === 'admin@mushroomservice.com';
 
   const handleAddRecipe = (formData: RecipeFormData) => {
     const newRecipe: Recipe = {
-      ...formData,
       id: Date.now().toString(),
+      ...formData,
       createdAt: new Date(),
       isCustom: true,
       status: 'pending'
@@ -54,18 +48,25 @@ const App: React.FC = () => {
   };
 
   const handleRecipeAction = (recipeId: string, action: 'approve' | 'reject' | 'delete') => {
-    setRecipes(prev => prev.map(recipe => {
-      if (recipe.id === recipeId) {
-        if (action === 'delete') {
-          return null;
-        }
-        return {
-          ...recipe,
-          status: action === 'approve' ? 'approved' : 'rejected'
-        };
-      }
-      return recipe;
-    }).filter(Boolean) as Recipe[]);
+    switch (action) {
+      case 'approve':
+        setRecipes(prev =>
+          prev.map(recipe =>
+            recipe.id === recipeId ? { ...recipe, status: 'approved' } : recipe
+          )
+        );
+        break;
+      case 'reject':
+        setRecipes(prev =>
+          prev.map(recipe =>
+            recipe.id === recipeId ? { ...recipe, status: 'rejected' } : recipe
+          )
+        );
+        break;
+      case 'delete':
+        setRecipes(prev => prev.filter(recipe => recipe.id !== recipeId));
+        break;
+    }
   };
 
   const renderContent = () => {
@@ -76,8 +77,8 @@ const App: React.FC = () => {
             {/* Hero Section */}
             <section className="relative h-[600px] overflow-hidden">
               <img
-                src={yourImage}
-                alt="Mushroom Service Logo"
+                src="/src/images/mushheader1.jpeg"
+                alt="Mushroom cultivation"
                 className="absolute inset-0 w-full h-full object-cover"
                 style={{ filter: 'brightness(0.6)' }}
               />
@@ -85,7 +86,7 @@ const App: React.FC = () => {
               <div className="relative max-w-7xl mx-auto px-4 h-full flex flex-col items-center justify-center text-center pt-20">
                 <div className="flex items-center gap-8 mb-8">
                   <img
-                    src={yourImage}
+                    src="/src/images/mushroomservicelogo.png"
                     alt="Mushroom Service Logo"
                     className="w-48 h-48 object-contain rounded-lg"
                   />
@@ -93,7 +94,7 @@ const App: React.FC = () => {
                     Fresh Mushrooms & Professional Growing Supplies
                   </h1>
                   <img
-                    src={kingOyster}
+                    src="/src/images/kingoyster_1.jpeg"
                     alt="King Oyster Mushrooms"
                     className="w-48 h-48 object-cover rounded-lg"
                   />
@@ -105,31 +106,9 @@ const App: React.FC = () => {
                 <div className="flex flex-wrap gap-4 items-center justify-center">
                   <button
                     onClick={() => setActiveSection('shop')}
-                    className="bg-amber-600 text-white px-8 py-3 rounded-md hover:bg-amber-700 transition-colors flex items-center gap-2"
+                    className="bg-amber-600 text-white px-8 py-3 rounded-md hover:bg-amber-700 transition-colors"
                   >
-                    <ShoppingBag className="w-5 h-5" />
                     Shop Now
-                  </button>
-                  <button
-                    onClick={() => setActiveSection('recipes')}
-                    className="bg-amber-100 text-amber-900 px-8 py-3 rounded-md hover:bg-amber-200 transition-colors flex items-center gap-2"
-                  >
-                    <ChefHat className="w-5 h-5" />
-                    Cultivation Recipes
-                  </button>
-                  <button
-                    onClick={() => setActiveSection('tools')}
-                    className="bg-white/90 text-amber-900 px-8 py-3 rounded-md hover:bg-white transition-colors flex items-center gap-2"
-                  >
-                    <Calculator className="w-5 h-5" />
-                    Cultivation Tools
-                  </button>
-                  <button
-                    onClick={() => setActiveSection('ebooks')}
-                    className="bg-amber-800 text-white px-8 py-3 rounded-md hover:bg-amber-900 transition-colors flex items-center gap-2"
-                  >
-                    <BookOpen className="w-5 h-5" />
-                    Free Resources
                   </button>
                 </div>
               </div>
@@ -141,84 +120,39 @@ const App: React.FC = () => {
                 <h2 className="text-3xl font-bold text-amber-900 mb-8">Featured Products</h2>
                 <div className="grid grid-cols-1 md:grid-cols-3 gap-8">
                   <ProductCard
-                    title="Fresh Blue Oyster Mushrooms"
+                    title="Blue Oyster Mushrooms"
                     price={12.99}
                     imagePlaceholder="https://i.ibb.co/HDfCcP96/blueoyster.jpg"
-                    description="Locally grown, fresh Blue Oyster mushrooms. Available in 1lb packages."
-                    sku="blue-oyster-1lb"
+                    description="Fresh, locally grown Blue Oyster mushrooms"
+                    sku="blue-oyster-fresh"
                     weight={454}
                     maxQuantity={10}
                   />
                   <ProductCard
-                    title="Complete Growing Kit"
-                    price={49.99}
-                    imagePlaceholder="https://i.ibb.co/fVSvc8VM/spawnbag.jpg"
-                    description="Everything you need to start growing gourmet mushrooms at home."
-                    sku="growing-kit-complete"
-                    weight={2268}
-                    maxQuantity={5}
+                    title="Coir Block"
+                    price={4.99}
+                    imagePlaceholder="https://i.ibb.co/sp6gtTHx/coco-coir-block-500x500.webp"
+                    description="Coir Block"
+                    sku="coir"
+                    weight={1340}
+                    maxQuantity={8}
                   />
                   <ProductCard
-                    title="Premium Spawn Bags"
+                    title="Sterilized Grain Spawn"
                     price={24.99}
-                    imagePlaceholder="https://i.ibb.co/fVSvc8VM/spawnbag.jpg"
-                    description="Professional-grade spawn bags for mushroom cultivation."
-                    sku="spawn-bags-premium"
+                    imagePlaceholder="https://i.ibb.co/HDfCcP96/blueoyster.jpg"
+                    description="Professional grade grain spawn bags"
+                    sku="grain-spawn-sterile"
                     weight={1134}
                     maxQuantity={20}
                   />
                 </div>
               </div>
             </section>
-          </>
-        );
 
-      case 'about':
-        return (
-          <section className="py-16 bg-white">
-            <div className="max-w-7xl mx-auto px-4">
-              <div className="grid grid-cols-1 md:grid-cols-2 gap-12 items-center">
-                <div>
-                  <h2 className="text-3xl font-bold text-amber-900 mb-6">About MushRoomService</h2>
-                  <p className="text-gray-700 mb-4">
-                    Located in Edenton, North Carolina, MushRoomService is your premier source for fresh gourmet mushrooms and professional cultivation supplies.
-                  </p>
-                  <p className="text-gray-700 mb-4">
-                    Our state-of-the-art growing facility produces the highest quality mushrooms, while our shop provides everything you need to start your own cultivation journey.
-                  </p>
-                  <div className="space-y-4 mt-8">
-                    <div className="flex items-center">
-                      <MapPin className="w-5 h-5 text-amber-600 mr-3" />
-                      <span>Edenton, NC 27932</span>
-                    </div>
-                    <div className="flex items-center">
-                      <Phone className="w-5 h-5 text-amber-600 mr-3" />
-                      <span>(252) 862-7223</span>
-                    </div>
-                    <div className="flex items-center">
-                      <Mail className="w-5 h-5 text-amber-600 mr-3" />
-                      <span>mushroomservice@gmail.com</span>
-                    </div>
-                  </div>
-                </div>
-                <div>
-                  <img
-                    src={yourImage}
-                    alt="Mushroom Service Logo"
-                    className="mb-6 mx-auto max-w-sm rounded-lg shadow-lg"
-                  />
-                  <div className="text-center">
-                    <button
-                      onClick={() => setActiveSection('shop')}
-                      className="bg-amber-600 text-white px-8 py-3 rounded-md hover:bg-amber-700 transition-colors mb-4"
-                    >
-                      Shop Now
-                    </button>
-                  </div>
-                </div>
-              </div>
-            </div>
-          </section>
+            {/* Product Links Section */}
+            <ProductLinks />
+          </>
         );
 
       case 'shop':
