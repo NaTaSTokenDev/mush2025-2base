@@ -77,7 +77,7 @@ const App: React.FC = () => {
             {/* Hero Section */}
             <section className="relative h-[600px] overflow-hidden">
               <img
-                src="/src/images/mushheader1.jpeg"
+                src="/images/mushheader1.jpeg"
                 alt="Mushroom cultivation"
                 className="absolute inset-0 w-full h-full object-cover"
                 style={{ filter: 'brightness(0.6)' }}
@@ -86,7 +86,7 @@ const App: React.FC = () => {
               <div className="relative max-w-7xl mx-auto px-4 h-full flex flex-col items-center justify-center text-center pt-20">
                 <div className="flex items-center gap-8 mb-8">
                   <img
-                    src="/src/images/mushroomservicelogo.png"
+                    src="/images/mushroomservicelogo.png"
                     alt="Mushroom Service Logo"
                     className="w-48 h-48 object-contain rounded-lg"
                   />
@@ -94,7 +94,7 @@ const App: React.FC = () => {
                     Fresh Mushrooms & Professional Growing Supplies
                   </h1>
                   <img
-                    src="/src/images/kingoyster_1.jpeg"
+                    src="/images/kingoyster_1.jpeg"
                     alt="King Oyster Mushrooms"
                     className="w-48 h-48 object-cover rounded-lg"
                   />
