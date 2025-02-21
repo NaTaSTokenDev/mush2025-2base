@@ -54,6 +54,15 @@ const productLinks: ProductLink[] = [
   },
   {
     category: "Essential Tools",
+    title: "All-Season 4-Tier Mini Grow House",
+    description: "Great Cheap Starter Tent = All-Season 4-Tier Mini Grow House Outdoor or Backyard Easy Assembly Portable Greenhouse, Translucent",
+    imageUrl: "https://i.ibb.co/WW0gH0sm/tent1.jpg",
+    affiliateUrl: "https://amzn.to/4gTiZqD",
+    price: "$59.99",
+    rating: 4.5
+  },
+  {
+    category: "Essential Tools",
     title: "Syringe Filters",
     description: "Syringe Filters PTFE Hydrophobic 25 mm 0.22 um Non Sterile 25/pk by KS-Tek",
     imageUrl: "https://i.ibb.co/RTcV4H5H/filter1.jpg",
