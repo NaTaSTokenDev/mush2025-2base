@@ -24,6 +24,26 @@ const productLinks: ProductLink[] = [
     badge: "Most Popular"
   },
   {
+    category: "Best Sellers",
+    title: "Beginner's Guide to Safely Foraging for Wild Mushrooms",
+    description: "Beginner's Guide to Safely Foraging for Wild Mushrooms: Identifying and Collecting Mushrooms Sustainably with Confidence ",
+    imageUrl: "https://i.ibb.co/DgStDqMT/book1.jpg",
+    affiliateUrl: "https://amzn.to/4bcyg4p",
+    price: "$8.64",
+    rating: 4.7,
+    badge: "Essential Reading"
+  },
+  {
+    category: "Best Sellers",
+    title: "Foldable Small Kitchen Funnel",
+    description: "OTOTO Mushroom - Foldable Small Kitchen Funnel with Wide Mouth for Jars. Bottle Liquid Transfer - Silicone, 100% Food Safe, BPA Free, Dishwasher Safe",
+    imageUrl: "https://i.ibb.co/HDFc9vdR/funnel1.jpg",
+    affiliateUrl: "https://amzn.to/4hO4zZR",
+    price: "$13.95",
+    rating: 4.7,
+    badge: "Most Popular"
+  },
+{
     category: "Essential Tools",
     title: "Govee WiFi Hygrometer Thermometer",
     description: "Govee WiFi Hygrometer Thermometer Sensor 3 Pack, Indoor Wireless Smart Temperature Humidity Monitor with Remote App Notification Alert, 2 Years Data Storage Export, for Home, Greenhouse",
@@ -33,13 +53,22 @@ const productLinks: ProductLink[] = [
     rating: 4.5
   },
   {
+    category: "Essential Tools",
+    title: "Syringe Filters",
+    description: "Syringe Filters PTFE Hydrophobic 25 mm 0.22 um Non Sterile 25/pk by KS-Tek",
+    imageUrl: "https://i.ibb.co/RTcV4H5H/filter1.jpg",
+    affiliateUrl: "https://amzn.to/41oeorI",
+    price: "$13.99",
+    rating: 4.5
+  },
+  {
     category: "Substrate Preperation",
-    title: "Complete Grow Kit",
-    description: "Everything you need to start growing gourmet mushrooms at home.",
-    imageUrl: "https://i.ibb.co/6Hw8Q2H/grow-kit.jpg",
-    affiliateUrl: "#",
-    price: "$79.99",
-    rating: 4.9,
+    title: "Horticultural Coarse Vermiculite",
+    description: "Horticultural Coarse Vermiculite - 4 Cubic Feet",
+    imageUrl: "https://i.ibb.co/3mskKZXd/verm1.jpg",
+    affiliateUrl: "https://amzn.to/4bc2aG0",
+    price: "$56.38",
+    rating: 4.8,
     badge: "Substrate Prep"
   },
   {
@@ -47,7 +76,7 @@ const productLinks: ProductLink[] = [
     title: "Beginner's Guide to Safely Foraging for Wild Mushrooms",
     description: "Beginner's Guide to Safely Foraging for Wild Mushrooms: Identifying and Collecting Mushrooms Sustainably with Confidence ",
     imageUrl: "https://i.ibb.co/DgStDqMT/book1.jpg",
-    affiliateUrl: "#",
+    affiliateUrl: "https://amzn.to/4bcyg4p",
     price: "$8.64",
     rating: 4.7,
     badge: "Essential Reading"
