@@ -17,9 +17,9 @@ const productLinks: ProductLink[] = [
     category: "Best Sellers",
     title: "Premium Pressure Cooker 23QT",
     description: "Perfect for sterilizing substrate and grain spawn. A must-have for serious cultivators.",
-    imageUrl: "https://i.ibb.co/VcjPKVCX/cooker1.jpg",
-    affiliateUrl: "#",
-    price: "$299.99",
+    imageUrl: "https://i.ibb.co/27XX3D9c/cooker1.jpg",
+    affiliateUrl: "https://amzn.to/41oE4EC",
+    price: "$134.10",
     rating: 4.8,
     badge: "Most Popular"
   },
@@ -30,7 +30,7 @@ const productLinks: ProductLink[] = [
     imageUrl: "https://i.ibb.co/DgStDqMT/book1.jpg",
     affiliateUrl: "https://amzn.to/4bcyg4p",
     price: "$8.64",
-    rating: 4.7,
+    rating: 4.8,
     badge: "Essential Reading"
   },
   {
@@ -56,7 +56,7 @@ const productLinks: ProductLink[] = [
     category: "Essential Tools",
     title: "All-Season 4-Tier Mini Grow House",
     description: "Great Cheap Starter Tent = All-Season 4-Tier Mini Grow House Outdoor or Backyard Easy Assembly Portable Greenhouse, Translucent",
-    imageUrl: "https://i.ibb.co/WW0gH0sm/tent1.jpg",
+    imageUrl: "https://i.ibb.co/6cWQTcM9/tent1.png",
     affiliateUrl: "https://amzn.to/4gTiZqD",
     price: "$59.99",
     rating: 4.5
@@ -74,7 +74,7 @@ const productLinks: ProductLink[] = [
     category: "Substrate Preperation",
     title: "Horticultural Coarse Vermiculite",
     description: "Horticultural Coarse Vermiculite - 4 Cubic Feet",
-    imageUrl: "https://i.ibb.co/3mskKZXd/verm1.jpg",
+    imageUrl: "https://i.ibb.co/b5t1mBLv/verm1.jpg",
     affiliateUrl: "https://amzn.to/4bc2aG0",
     price: "$56.38",
     rating: 4.8,
@@ -84,7 +84,7 @@ const productLinks: ProductLink[] = [
     category: "Books",
     title: "Beginner's Guide to Safely Foraging for Wild Mushrooms",
     description: "Beginner's Guide to Safely Foraging for Wild Mushrooms: Identifying and Collecting Mushrooms Sustainably with Confidence ",
-    imageUrl: "https://i.ibb.co/DgStDqMT/book1.jpg",
+    imageUrl: "https://i.ibb.co/BHhk5tXm/book1.jpg",
     affiliateUrl: "https://amzn.to/4bcyg4p",
     price: "$8.64",
     rating: 4.7,
