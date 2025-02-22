@@ -25,13 +25,12 @@ const productLinks: ProductLink[] = [
   },
   {
     category: "Best Sellers",
-    title: "Beginner's Guide to Safely Foraging for Wild Mushrooms",
-    description: "Beginner's Guide to Safely Foraging for Wild Mushrooms: Identifying and Collecting Mushrooms Sustainably with Confidence ",
-    imageUrl: "https://i.ibb.co/DgStDqMT/book1.jpg",
-    affiliateUrl: "https://amzn.to/4bcyg4p",
-    price: "$8.64",
-    rating: 4.8,
-    badge: "Essential Reading"
+    title: "All-Season 4-Tier Mini Grow House",
+    description: "Great Cheap Starter Tent = All-Season 4-Tier Mini Grow House Outdoor or Backyard Easy Assembly Portable Greenhouse, Translucent",
+    imageUrl: "https://i.ibb.co/6cWQTcM9/tent1.png",
+    affiliateUrl: "https://amzn.to/4gTiZqD",
+    price: "$59.99",
+    rating: 4.5
   },
   {
     category: "Best Sellers",
