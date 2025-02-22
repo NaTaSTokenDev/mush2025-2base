@@ -65,8 +65,9 @@ export function Navbar({ activeSection, setActiveSection, mobileMenuOpen, setMob
           <div className="flex items-center space-x-4">
             <Sprout className={`h-8 w-8 ${isScrolled ? 'text-amber-600' : 'text-white'}`} />
             <span className={`text-xl font-bold ${isScrolled ? 'text-amber-900' : 'text-white'}`}>
-              MushRoomService
+              MushRoomService    
             </span>
+            
           </div>
 
           {/* Desktop menu */}
